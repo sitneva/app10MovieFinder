@@ -8,7 +8,11 @@ import {MovieService} from '../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor(private _movieService: MovieService) { }
+  constructor(private _movieService: MovieService) {
+    this._movieService.getPopular().subscribe(res => {
+      console.log(res);
+    });
+  }
 
   ngOnInit() {
   }
